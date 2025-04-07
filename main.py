@@ -20,6 +20,7 @@ import sys
 import platform
 import tempfile
 import shutil
+from pydub import AudioSegment
 
 # Setup logging for troubleshooting
 logging.basicConfig(filename="downloader.log", level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -220,6 +221,16 @@ def check_chrome_cookies():
         logging.error(f"Error checking Chrome cookies: {e}")
         return False
 
+def convert_to_mp3(input_path, output_path):
+    """Convert audio file to MP3 using pydub"""
+    try:
+        audio = AudioSegment.from_file(input_path)
+        audio.export(output_path, format='mp3', bitrate='192k')
+        return True
+    except Exception as e:
+        logging.error(f"Error converting audio with pydub: {e}")
+        return False
+
 def download_with_ytdlp(video_url, output_path, track_name):
     """Download a video using yt-dlp with advanced options to avoid bot detection"""
     try:
@@ -259,7 +270,7 @@ def download_with_ytdlp(video_url, output_path, track_name):
             'geo_bypass': True,
             'geo_bypass_country': 'US',
             'geo_bypass_ip_block': '0.0.0.0/0',
-            'merge_output_format': 'mp3',  # Force MP3 output
+            'merge_output_format': 'mp3',
         }
         
         # Only add cookies if Chrome is available
@@ -273,33 +284,18 @@ def download_with_ytdlp(video_url, output_path, track_name):
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([video_url])
             
-        # Find the downloaded file and rename it to the final output path
+        # Find the downloaded file and convert it to MP3 if needed
         temp_dir = os.path.dirname(temp_output)
         for file in os.listdir(temp_dir):
             if file.startswith(f"temp_{track_name}"):
-                # If the file is not already an MP3, convert it
+                input_file = os.path.join(temp_dir, file)
                 if not file.endswith('.mp3'):
-                    input_file = os.path.join(temp_dir, file)
-                    output_file = os.path.join(temp_dir, f"{track_name}.mp3")
-                    try:
-                        subprocess.run([
-                            'ffmpeg', '-i', input_file,
-                            '-acodec', 'libmp3lame',
-                            '-ab', '192k',
-                            '-y',  # Overwrite output file if it exists
-                            output_file
-                        ], capture_output=True, check=True)
-                        # Remove the original file
+                    if convert_to_mp3(input_file, output_path):
                         os.remove(input_file)
-                        # Rename the converted file to the final output path
-                        os.rename(output_file, output_path)
                         return True
-                    except subprocess.SubprocessError as e:
-                        logging.error(f"Error converting audio: {e}")
-                        return False
+                    return False
                 else:
-                    # If it's already an MP3, just rename it
-                    os.rename(os.path.join(temp_dir, file), output_path)
+                    os.rename(input_file, output_path)
                     return True
                 
         return False
@@ -493,7 +489,7 @@ def download_with_yt_dlp_alternative(video_url, output_path):
             'geo_bypass_country': 'US',
             'geo_bypass_ip_block': '0.0.0.0/0',
             'extractor_args': {'youtube': {'skip': ['dash', 'hls']}},
-            'merge_output_format': 'mp3',  # Force MP3 output
+            'merge_output_format': 'mp3',
         }
         
         # Only add aria2c if it's available
@@ -509,40 +505,20 @@ def download_with_yt_dlp_alternative(video_url, output_path):
             
         # Find the downloaded file and convert it to MP3 if needed
         for file in os.listdir(temp_dir):
+            input_file = os.path.join(temp_dir, file)
             if not file.endswith('.mp3'):
-                input_file = os.path.join(temp_dir, file)
-                output_file = os.path.join(temp_dir, "output.mp3")
-                try:
-                    subprocess.run([
-                        'ffmpeg', '-i', input_file,
-                        '-acodec', 'libmp3lame',
-                        '-ab', '192k',
-                        '-y',  # Overwrite output file if it exists
-                        output_file
-                    ], capture_output=True, check=True)
-                    # Remove the original file
-                    os.remove(input_file)
-                    # Copy the converted file to the final output path
-                    shutil.copy(output_file, output_path)
-                    # Clean up
+                if convert_to_mp3(input_file, output_path):
                     shutil.rmtree(temp_dir)
                     return True
-                except subprocess.SubprocessError as e:
-                    logging.error(f"Error converting audio: {e}")
-                    continue
             else:
-                # If it's already an MP3, just copy it
-                shutil.copy(os.path.join(temp_dir, file), output_path)
-                # Clean up
+                shutil.copy(input_file, output_path)
                 shutil.rmtree(temp_dir)
                 return True
                 
-        # Clean up
         shutil.rmtree(temp_dir)
         return False
     except Exception as e:
         logging.error(f"Error in yt-dlp alternative download: {e}")
-        # Clean up in case of error
         try:
             shutil.rmtree(temp_dir)
         except:
@@ -579,7 +555,7 @@ def download_with_yt_dlp_legacy(video_url, output_path):
             'geo_bypass': True,
             'extractor_args': {'youtube': {'skip': ['dash', 'hls']}},
             'legacy_server_connect': True,
-            'merge_output_format': 'mp3',  # Force MP3 output
+            'merge_output_format': 'mp3',
         }
         
         with YoutubeDL(ydl_opts) as ydl:
@@ -589,28 +565,14 @@ def download_with_yt_dlp_legacy(video_url, output_path):
         temp_dir = os.path.dirname(temp_output)
         for file in os.listdir(temp_dir):
             if file.startswith("temp_legacy_"):
+                input_file = os.path.join(temp_dir, file)
                 if not file.endswith('.mp3'):
-                    input_file = os.path.join(temp_dir, file)
-                    output_file = os.path.join(temp_dir, f"{os.path.splitext(file)[0]}.mp3")
-                    try:
-                        subprocess.run([
-                            'ffmpeg', '-i', input_file,
-                            '-acodec', 'libmp3lame',
-                            '-ab', '192k',
-                            '-y',  # Overwrite output file if it exists
-                            output_file
-                        ], capture_output=True, check=True)
-                        # Remove the original file
+                    if convert_to_mp3(input_file, output_path):
                         os.remove(input_file)
-                        # Rename the converted file to the final output path
-                        os.rename(output_file, output_path)
                         return True
-                    except subprocess.SubprocessError as e:
-                        logging.error(f"Error converting audio: {e}")
-                        return False
+                    return False
                 else:
-                    # If it's already an MP3, just rename it
-                    os.rename(os.path.join(temp_dir, file), output_path)
+                    os.rename(input_file, output_path)
                     return True
                 
         return False
@@ -652,7 +614,7 @@ def download_with_yt_dlp_anonymous(video_url, output_path):
             'legacy_server_connect': True,
             'no_cookies': True,
             'no_cache_dir': True,
-            'merge_output_format': 'mp3',  # Force MP3 output
+            'merge_output_format': 'mp3',
         }
         
         with YoutubeDL(ydl_opts) as ydl:
@@ -662,28 +624,14 @@ def download_with_yt_dlp_anonymous(video_url, output_path):
         temp_dir = os.path.dirname(temp_output)
         for file in os.listdir(temp_dir):
             if file.startswith("temp_anon_"):
+                input_file = os.path.join(temp_dir, file)
                 if not file.endswith('.mp3'):
-                    input_file = os.path.join(temp_dir, file)
-                    output_file = os.path.join(temp_dir, f"{os.path.splitext(file)[0]}.mp3")
-                    try:
-                        subprocess.run([
-                            'ffmpeg', '-i', input_file,
-                            '-acodec', 'libmp3lame',
-                            '-ab', '192k',
-                            '-y',  # Overwrite output file if it exists
-                            output_file
-                        ], capture_output=True, check=True)
-                        # Remove the original file
+                    if convert_to_mp3(input_file, output_path):
                         os.remove(input_file)
-                        # Rename the converted file to the final output path
-                        os.rename(output_file, output_path)
                         return True
-                    except subprocess.SubprocessError as e:
-                        logging.error(f"Error converting audio: {e}")
-                        return False
+                    return False
                 else:
-                    # If it's already an MP3, just rename it
-                    os.rename(os.path.join(temp_dir, file), output_path)
+                    os.rename(input_file, output_path)
                     return True
                 
         return False

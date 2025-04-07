@@ -20,7 +20,6 @@ import sys
 import platform
 import tempfile
 import shutil
-from pydub import AudioSegment
 
 # Setup logging for troubleshooting
 logging.basicConfig(filename="downloader.log", level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -221,34 +220,106 @@ def check_chrome_cookies():
         logging.error(f"Error checking Chrome cookies: {e}")
         return False
 
-def convert_to_mp3(input_path, output_path):
-    """Convert audio file to MP3 using pydub"""
+def get_ffmpeg_path():
+    """Get the path to FFmpeg executable"""
     try:
-        audio = AudioSegment.from_file(input_path)
-        audio.export(output_path, format='mp3', bitrate='192k')
-        return True
+        # First check if FFmpeg is in the script's directory
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        ffmpeg_path = os.path.join(script_dir, 'ffmpeg.exe')
+        if os.path.exists(ffmpeg_path):
+            return ffmpeg_path
+            
+        # Then check in the Python directory
+        python_dir = os.path.dirname(sys.executable)
+        ffmpeg_path = os.path.join(python_dir, 'ffmpeg.exe')
+        if os.path.exists(ffmpeg_path):
+            return ffmpeg_path
+            
+        # Check in common installation directories
+        common_paths = [
+            os.path.join(os.getenv('LOCALAPPDATA'), 'Programs', 'ffmpeg', 'bin', 'ffmpeg.exe'),
+            os.path.join(os.getenv('PROGRAMFILES'), 'ffmpeg', 'bin', 'ffmpeg.exe'),
+            os.path.join(os.getenv('PROGRAMFILES(X86)'), 'ffmpeg', 'bin', 'ffmpeg.exe'),
+        ]
+        
+        for path in common_paths:
+            if os.path.exists(path):
+                return path
+                
+        # If not found, download FFmpeg
+        print("FFmpeg not found. Downloading...")
+        ffmpeg_url = "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.1-latest-win64-gpl-6.1.zip"
+        zip_path = os.path.join(script_dir, "ffmpeg.zip")
+        
+        # Download the zip file
+        response = requests.get(ffmpeg_url, stream=True)
+        total_size = int(response.headers.get('content-length', 0))
+        block_size = 1024  # 1 Kibibyte
+        
+        print("Downloading FFmpeg...")
+        with open(zip_path, 'wb') as f:
+            for data in response.iter_content(block_size):
+                f.write(data)
+                
+        print("Extracting FFmpeg...")
+        # Extract ffmpeg.exe
+        import zipfile
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            # Find ffmpeg.exe in the zip
+            ffmpeg_file = None
+            for file in zip_ref.namelist():
+                if file.endswith('ffmpeg.exe'):
+                    ffmpeg_file = file
+                    break
+                    
+            if ffmpeg_file:
+                # Create a temporary directory for extraction
+                temp_dir = os.path.join(script_dir, 'temp_ffmpeg')
+                os.makedirs(temp_dir, exist_ok=True)
+                
+                # Extract ffmpeg.exe to temp directory
+                zip_ref.extract(ffmpeg_file, temp_dir)
+                
+                # Move ffmpeg.exe to script directory
+                extracted_ffmpeg = os.path.join(temp_dir, ffmpeg_file)
+                try:
+                    shutil.move(extracted_ffmpeg, ffmpeg_path)
+                except:
+                    # If move fails, try copy and delete
+                    shutil.copy2(extracted_ffmpeg, ffmpeg_path)
+                    
+                # Clean up
+                shutil.rmtree(temp_dir)
+                
+        # Clean up zip file
+        os.remove(zip_path)
+        
+        if os.path.exists(ffmpeg_path):
+            print("FFmpeg downloaded and installed successfully!")
+            return ffmpeg_path
+        else:
+            print("Failed to install FFmpeg.")
+            
     except Exception as e:
-        logging.error(f"Error converting audio with pydub: {e}")
-        return False
+        logging.error(f"Error setting up FFmpeg: {e}")
+        print(f"Error setting up FFmpeg: {e}")
+        
+    return None
 
 def download_with_ytdlp(video_url, output_path, track_name):
     """Download a video using yt-dlp with advanced options to avoid bot detection"""
     try:
         # Create a temporary file for the output
-        temp_output = os.path.join(os.path.dirname(output_path), f"temp_{track_name}.%(ext)s")
+        temp_dir = os.path.dirname(output_path)
+        temp_output = os.path.join(temp_dir, f"{track_name}.%(ext)s")
         
         # Advanced options to avoid bot detection
         ydl_opts = {
-            'format': 'bestaudio/best',
+            'format': 'bestaudio',
             'outtmpl': temp_output,
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
             'noplaylist': True,
-            'quiet': True,
-            'no_warnings': True,
+            'quiet': False,
+            'no_warnings': False,
             'extract_flat': False,
             'http_headers': {
                 'User-Agent': get_random_user_agent(),
@@ -264,13 +335,12 @@ def download_with_ytdlp(video_url, output_path, track_name):
             'fragment_retries': 10,
             'file_access_retries': 10,
             'extractor_retries': 10,
-            'ignoreerrors': True,
+            'ignoreerrors': False,
             'no_check_certificate': True,
-            'prefer_ffmpeg': True,
+            'keepvideo': False,
             'geo_bypass': True,
             'geo_bypass_country': 'US',
             'geo_bypass_ip_block': '0.0.0.0/0',
-            'merge_output_format': 'mp3',
         }
         
         # Only add cookies if Chrome is available
@@ -282,21 +352,45 @@ def download_with_ytdlp(video_url, output_path, track_name):
                 logging.warning(f"Failed to use Chrome cookies: {e}")
         
         with YoutubeDL(ydl_opts) as ydl:
-            ydl.download([video_url])
-            
-        # Find the downloaded file and convert it to MP3 if needed
-        temp_dir = os.path.dirname(temp_output)
-        for file in os.listdir(temp_dir):
-            if file.startswith(f"temp_{track_name}"):
-                input_file = os.path.join(temp_dir, file)
-                if not file.endswith('.mp3'):
-                    if convert_to_mp3(input_file, output_path):
-                        os.remove(input_file)
-                        return True
+            try:
+                # Download the video
+                info = ydl.extract_info(video_url, download=True)
+                if info is None:
+                    logging.error("Failed to extract video info")
                     return False
-                else:
-                    os.rename(input_file, output_path)
-                    return True
+                
+                # Find the downloaded file
+                downloaded_file = None
+                for file in os.listdir(temp_dir):
+                    if file.startswith(track_name):
+                        downloaded_file = os.path.join(temp_dir, file)
+                        break
+                
+                if downloaded_file is None:
+                    logging.error("Could not find downloaded file")
+                    return False
+                
+                # Check if the file is valid
+                if not os.path.exists(downloaded_file) or os.path.getsize(downloaded_file) == 0:
+                    logging.error(f"Downloaded file is invalid or empty: {downloaded_file}")
+                    return False
+                
+                # Move the file to the final location
+                try:
+                    shutil.move(downloaded_file, output_path)
+                    # Verify the final file
+                    if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                        return True
+                    else:
+                        logging.error(f"Final file is invalid or empty: {output_path}")
+                        return False
+                except Exception as e:
+                    logging.error(f"Error moving file to final location: {e}")
+                    return False
+                    
+            except Exception as e:
+                logging.error(f"Error during download: {e}")
+                return False
                 
         return False
     except Exception as e:
@@ -460,16 +554,18 @@ def download_with_yt_dlp_alternative(video_url, output_path):
         
         # Alternative options that might bypass bot detection
         ydl_opts = {
-            'format': 'bestaudio/best',
+            'format': 'bestaudio',  # Changed to get best audio only
             'outtmpl': temp_output,
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
                 'preferredquality': '192',
+                'nopostoverwrites': False,
             }],
+            'writethumbnail': True,
             'noplaylist': True,
-            'quiet': True,
-            'no_warnings': True,
+            'quiet': False,
+            'no_warnings': False,
             'extract_flat': False,
             'http_headers': {
                 'User-Agent': get_random_user_agent(),
@@ -482,38 +578,61 @@ def download_with_yt_dlp_alternative(video_url, output_path):
             },
             'socket_timeout': 30,
             'retries': 10,
-            'ignoreerrors': True,
+            'ignoreerrors': False,
             'no_check_certificate': True,
             'prefer_ffmpeg': True,
+            'keepvideo': False,
             'geo_bypass': True,
             'geo_bypass_country': 'US',
             'geo_bypass_ip_block': '0.0.0.0/0',
             'extractor_args': {'youtube': {'skip': ['dash', 'hls']}},
-            'merge_output_format': 'mp3',
         }
         
-        # Only add aria2c if it's available
-        try:
-            subprocess.run(['aria2c', '--version'], capture_output=True, check=True)
-            ydl_opts['external_downloader'] = 'aria2c'
-            ydl_opts['external_downloader_args'] = ['--min-split-size=1M', '--max-connection-per-server=16', '--max-concurrent-downloads=16', '--split=16']
-        except (subprocess.SubprocessError, FileNotFoundError):
-            logging.warning("aria2c not found - using default downloader")
-        
         with YoutubeDL(ydl_opts) as ydl:
-            ydl.download([video_url])
-            
-        # Find the downloaded file and convert it to MP3 if needed
-        for file in os.listdir(temp_dir):
-            input_file = os.path.join(temp_dir, file)
-            if not file.endswith('.mp3'):
-                if convert_to_mp3(input_file, output_path):
+            try:
+                # Download the video
+                info = ydl.extract_info(video_url, download=True)
+                if info is None:
+                    logging.error("Failed to extract video info")
+                    return False
+                
+                # Find the downloaded file
+                downloaded_file = None
+                for file in os.listdir(temp_dir):
+                    if file.endswith('.mp3'):
+                        downloaded_file = os.path.join(temp_dir, file)
+                        break
+                
+                if downloaded_file is None:
+                    logging.error("Could not find downloaded file")
                     shutil.rmtree(temp_dir)
-                    return True
-            else:
-                shutil.copy(input_file, output_path)
+                    return False
+                
+                # Check if the file is valid
+                if not os.path.exists(downloaded_file) or os.path.getsize(downloaded_file) == 0:
+                    logging.error(f"Downloaded file is invalid or empty: {downloaded_file}")
+                    shutil.rmtree(temp_dir)
+                    return False
+                
+                # Move the file to the final location
+                try:
+                    shutil.copy2(downloaded_file, output_path)
+                    shutil.rmtree(temp_dir)
+                    # Verify the final file
+                    if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                        return True
+                    else:
+                        logging.error(f"Final file is invalid or empty: {output_path}")
+                        return False
+                except Exception as e:
+                    logging.error(f"Error copying file to final location: {e}")
+                    shutil.rmtree(temp_dir)
+                    return False
+                    
+            except Exception as e:
+                logging.error(f"Error during download: {e}")
                 shutil.rmtree(temp_dir)
-                return True
+                return False
                 
         shutil.rmtree(temp_dir)
         return False
@@ -675,11 +794,17 @@ def download_songs(selected_playlist):
         screen.after(0, update_status, track_num, total_tracks)
 
         sanitized_track_name = sanitize_filename(f"{track['track']['artists'][0]['name']} - {track['track']['name']}")
-        final_file = os.path.join(download_folder, f"{sanitized_track_name}.mp3")
+        final_file = os.path.join(download_folder, f"{sanitized_track_name}")  # Remove .mp3 extension
 
-        # Check if the file already exists
-        if os.path.exists(final_file):
-            print(f"Skipping, already downloaded: {final_file}")
+        # Check if any version of the file exists
+        existing_file = None
+        for file in os.listdir(download_folder):
+            if file.startswith(sanitized_track_name):
+                existing_file = os.path.join(download_folder, file)
+                break
+
+        if existing_file and os.path.getsize(existing_file) > 0:
+            print(f"Skipping, already downloaded: {existing_file}")
             continue
 
         success = False
@@ -702,43 +827,10 @@ def download_songs(selected_playlist):
                     try:
                         video_url = f"https://www.youtube.com/watch?v={video_id}"
                         
-                        # Try multiple download methods in sequence
                         print(f"Attempting to download: {video_url}")
                         
-                        # Method 1: Try with Invidious API (most reliable for bypassing bot detection)
-                        if not success:
-                            print("Trying download with Invidious API...")
-                            success = download_with_invidious(video_id, final_file)
-                            
-                        # Method 2: Try with yt-dlp anonymous
-                        if not success:
-                            print("Trying download with yt-dlp anonymous...")
-                            success = download_with_yt_dlp_anonymous(video_url, final_file)
-                            
-                        # Method 3: Try with yt-dlp legacy
-                        if not success:
-                            print("Trying download with yt-dlp legacy...")
-                            success = download_with_yt_dlp_legacy(video_url, final_file)
-                            
-                        # Method 4: Try with yt-dlp alternative
-                        if not success:
-                            print("Trying download with yt-dlp alternative...")
-                            success = download_with_yt_dlp_alternative(video_url, final_file)
-                            
-                        # Method 5: Try with yt-dlp library
-                        if not success:
-                            print("Trying download with yt-dlp library...")
-                            success = download_with_ytdlp(video_url, final_file, sanitized_track_name)
-                            
-                        # Method 6: Try with yt-dlp CLI
-                        if not success:
-                            print("Trying download with yt-dlp CLI...")
-                            success = download_with_yt_dlp_cli(video_url, final_file)
-                            
-                        # Method 7: Try with yt-dlp direct
-                        if not success:
-                            print("Trying download with yt-dlp direct...")
-                            success = download_with_yt_dlp_direct(video_url, final_file)
+                        # Try to download
+                        success = download_with_ytdlp(video_url, final_file, sanitized_track_name)
                         
                         if success:
                             print(f"Downloaded successfully: {final_file}")
@@ -746,8 +838,8 @@ def download_songs(selected_playlist):
                             time.sleep(random.uniform(1, 2))  # Random delay between downloads
                             break
                         else:
-                            print(f"All download methods failed for video: {video_id}")
-                            logging.warning(f"All download methods failed for video: {video_id}")
+                            print(f"Download failed for video: {video_id}")
+                            logging.warning(f"Download failed for video: {video_id}")
                             
                     except Exception as e:
                         print(f"Error downloading video: {e}")

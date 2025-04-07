@@ -90,3 +90,115 @@
 2025-04-07 19:43:53,802 - Error with Invidious instance https://invidious.woodland.cafe: HTTPSConnectionPool(host='invidious.woodland.cafe', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1020)')))
 2025-04-07 19:43:53,812 - Error with Invidious instance https://invidious.rawbit.ninja: HTTPSConnectionPool(host='invidious.rawbit.ninja', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB41849810>: Failed to resolve 'invidious.rawbit.ninja' ([Errno 11001] getaddrinfo failed)"))
 2025-04-07 19:46:52,105 - aria2c not found - some download methods may be slower
+2025-04-07 20:06:09,894 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 20:06:18,082 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:06:26,194 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:06:28,398 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:06:28,476 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000018218F41A90>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:06:28,519 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000018218F420D0>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:06:30,198 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 20:06:30,292 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000018218F42850>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:06:40,308 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000018218F42C10>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 20:06:51,490 - Error with Invidious instance https://invidious.moomoo.me: HTTPSConnectionPool(host='invidious.moomoo.me', port=443): Read timed out. (read timeout=10)
+2025-04-07 20:07:02,848 - Error with Invidious instance https://invidious.1d4.us: HTTPSConnectionPool(host='invidious.1d4.us', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'invidious.1d4.us'. (_ssl.c:1020)")))
+2025-04-07 20:07:05,248 - Error with Invidious instance https://invidious.woodland.cafe: HTTPSConnectionPool(host='invidious.woodland.cafe', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1020)')))
+2025-04-07 20:07:05,357 - Error with Invidious instance https://invidious.rawbit.ninja: HTTPSConnectionPool(host='invidious.rawbit.ninja', port=443): Max retries exceeded with url: /api/v1/videos/PvWsSyzJVyY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000018218F42350>: Failed to resolve 'invidious.rawbit.ninja' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:07:17,217 - Downloaded successfully: C:/Users/PraiseTech/Music/spotify\happy\Juice WRLD - Who Shot Cupid.mp3
+2025-04-07 20:07:18,558 - Processing Strip (feat. Kevin McCall) by Chris Brown...
+2025-04-07 20:07:25,794 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:07:31,375 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:07:33,637 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:07:33,640 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9D450>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:07:33,644 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9DD10>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:07:35,411 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 20:07:35,416 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9D1D0>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:07:45,428 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001821DF9E350>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 20:07:56,491 - Error with Invidious instance https://invidious.moomoo.me: HTTPSConnectionPool(host='invidious.moomoo.me', port=443): Read timed out. (read timeout=10)
+2025-04-07 20:08:07,867 - Error with Invidious instance https://invidious.1d4.us: HTTPSConnectionPool(host='invidious.1d4.us', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'invidious.1d4.us'. (_ssl.c:1020)")))
+2025-04-07 20:08:10,437 - Error with Invidious instance https://invidious.woodland.cafe: HTTPSConnectionPool(host='invidious.woodland.cafe', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1020)')))
+2025-04-07 20:08:10,440 - Error with Invidious instance https://invidious.rawbit.ninja: HTTPSConnectionPool(host='invidious.rawbit.ninja', port=443): Max retries exceeded with url: /api/v1/videos/JXRN_LkCa_o (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9EC10>: Failed to resolve 'invidious.rawbit.ninja' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:08:28,979 - Downloaded successfully: C:/Users/PraiseTech/Music/spotify\happy\Chris Brown - Strip (feat. Kevin McCall).mp3
+2025-04-07 20:08:30,788 - Processing Moyo Ongcwele (3step Mix) by Wanitwa Mos...
+2025-04-07 20:08:45,321 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:08:54,918 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:08:57,193 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:08:57,290 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9E710>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:08:57,759 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9D090>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:08:59,436 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 20:08:59,524 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9FED0>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:09:09,533 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001821EB042D0>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 20:09:20,723 - Error with Invidious instance https://invidious.moomoo.me: HTTPSConnectionPool(host='invidious.moomoo.me', port=443): Read timed out. (read timeout=10)
+2025-04-07 20:09:32,032 - Error with Invidious instance https://invidious.1d4.us: HTTPSConnectionPool(host='invidious.1d4.us', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'invidious.1d4.us'. (_ssl.c:1020)")))
+2025-04-07 20:09:34,677 - Error with Invidious instance https://invidious.woodland.cafe: HTTPSConnectionPool(host='invidious.woodland.cafe', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1020)')))
+2025-04-07 20:09:34,685 - Error with Invidious instance https://invidious.rawbit.ninja: HTTPSConnectionPool(host='invidious.rawbit.ninja', port=443): Max retries exceeded with url: /api/v1/videos/XV_HWMmKBGY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9CE10>: Failed to resolve 'invidious.rawbit.ninja' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:09:53,252 - Downloaded successfully: C:/Users/PraiseTech/Music/spotify\happy\Wanitwa Mos - Moyo Ongcwele (3step Mix).mp3
+2025-04-07 20:09:54,838 - Processing Wangisiza Baba by Shwi No Mtekhala...
+2025-04-07 20:10:01,712 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:10:08,238 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:10:10,960 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 20:10:10,972 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/akmeAPlcEqY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9E850>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:10:10,985 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/akmeAPlcEqY (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001821DF9E710>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 20:14:16,237 - Processing Wishing Well by Juice WRLD...
+2025-04-07 20:14:18,291 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:14:33,271 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:14:43,663 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:14:43,666 - Download failed for video: 91wBrXRW5ao
+2025-04-07 20:14:43,669 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:15:02,860 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:15:19,820 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:15:19,823 - Download failed for video: 2y2SmBTTRBA
+2025-04-07 20:15:19,827 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:15:33,875 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:16:05,195 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:16:05,199 - Download failed for video: mzB1VGEGcSU
+2025-04-07 20:16:05,200 - Retrying download for Wishing Well... 2 attempts left.
+2025-04-07 20:16:07,982 - Processing Wishing Well by Juice WRLD...
+2025-04-07 20:16:10,139 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:16:22,145 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:16:35,032 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:16:35,033 - Download failed for video: 91wBrXRW5ao
+2025-04-07 20:16:35,037 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:16:57,242 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:17:16,102 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:17:16,104 - Download failed for video: 2y2SmBTTRBA
+2025-04-07 20:17:16,107 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:17:36,416 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:18:11,434 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:18:11,438 - Download failed for video: mzB1VGEGcSU
+2025-04-07 20:18:11,438 - Retrying download for Wishing Well... 1 attempts left.
+2025-04-07 20:18:13,723 - Processing Wishing Well by Juice WRLD...
+2025-04-07 20:18:31,255 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:18:58,914 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:19:11,484 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:19:11,488 - Download failed for video: 91wBrXRW5ao
+2025-04-07 20:19:11,491 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:19:56,325 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:20:17,854 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:20:17,858 - Download failed for video: Z9yaG27quz0
+2025-04-07 20:20:17,862 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:20:39,813 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:20:51,759 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:20:51,761 - Download failed for video: 2y2SmBTTRBA
+2025-04-07 20:20:51,761 - Retrying download for Wishing Well... 0 attempts left.
+2025-04-07 20:20:54,372 - Processing 2002 by Anne-Marie...
+2025-04-07 20:20:56,623 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:21:12,736 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:21:27,169 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:21:27,170 - Download failed for video: QLBfN2Wz4Vc
+2025-04-07 20:21:27,172 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:21:43,324 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:22:08,734 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:22:08,737 - Download failed for video: QnWpMe_wZws
+2025-04-07 20:22:08,740 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:22:27,531 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:23:13,974 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:23:13,977 - Download failed for video: Il-an3K9pjg
+2025-04-07 20:23:13,978 - Retrying download for 2002... 2 attempts left.
+2025-04-07 20:23:16,206 - Processing 2002 by Anne-Marie...
+2025-04-07 20:23:20,836 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:23:41,333 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:23:54,908 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:23:54,911 - Download failed for video: QLBfN2Wz4Vc
+2025-04-07 20:23:54,913 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 20:24:23,798 - Error during download: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-04-07 20:24:55,906 - Processing Wishing Well by Juice WRLD...

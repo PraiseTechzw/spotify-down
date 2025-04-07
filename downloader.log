@@ -1,0 +1,92 @@
+2025-04-07 19:09:38,572 - Spotify OAuth setup error: No client_id. Pass it or set a SPOTIPY_CLIENT_ID environment variable.
+2025-04-07 19:26:49,347 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 19:27:06,873 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] YSOUfUsM0zY: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:27:15,518 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] YSOUfUsM0zY: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:27:25,474 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] yPYtrZZU3a0: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:27:35,532 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] yPYtrZZU3a0: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:27:48,642 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] W26eLS7d0-8: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:28:04,788 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] xhLcaxvVBXM: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:28:17,088 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] BJ-t3t5uNdA: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:28:27,272 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] HlUCvqgCgR8: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:32:30,837 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 19:32:42,807 - Error downloading video for Who Shot Cupid?: [0;31mERROR:[0m [youtube] CYy8NQ5H8aU: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+2025-04-07 19:34:45,553 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 19:34:46,538 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 19:34:53,262 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:34:53,271 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:35:01,009 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:35:01,989 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:35:04,235 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:35:04,260 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:35:06,108 - yt-dlp CLI error: ERROR: could not find chrome cookies database in "C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data"
+
+2025-04-07 19:35:06,108 - All download methods failed for video: xhLcaxvVBXM
+2025-04-07 19:35:06,178 - yt-dlp CLI error: ERROR: could not find chrome cookies database in "C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data"
+
+2025-04-07 19:35:06,239 - All download methods failed for video: xhLcaxvVBXM
+2025-04-07 19:38:00,372 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 19:38:03,086 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:38:16,162 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:38:22,005 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:38:24,313 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:38:24,887 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/Z51eYEmH4aU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1612B750>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:38:25,882 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/Z51eYEmH4aU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEC2D0>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:38:28,198 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 19:38:28,548 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/Z51eYEmH4aU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEC910>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:38:38,732 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/Z51eYEmH4aU (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025A1BBECCD0>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 19:38:38,736 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:38:51,250 - yt-dlp CLI error: ERROR: [youtube] Z51eYEmH4aU: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+
+2025-04-07 19:39:02,351 - All download methods failed for video: Z51eYEmH4aU
+2025-04-07 19:39:02,359 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:39:20,289 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:39:28,649 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:39:31,711 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:39:31,720 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/Mmhb2FA4TF8 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEDBD0>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:39:31,731 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/Mmhb2FA4TF8 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEDF90>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:39:34,201 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 19:39:34,212 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/Mmhb2FA4TF8 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEC910>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:39:44,232 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/Mmhb2FA4TF8 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025A1BBED310>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 19:39:44,236 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:39:55,198 - yt-dlp CLI error: ERROR: [youtube] Mmhb2FA4TF8: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+
+2025-04-07 19:40:06,605 - All download methods failed for video: Mmhb2FA4TF8
+2025-04-07 19:40:06,620 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:40:20,118 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:40:28,944 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:40:31,740 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:40:31,752 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/V2IwYeCRDj4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEE210>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:40:31,762 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/V2IwYeCRDj4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBED810>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:40:34,241 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 19:40:34,258 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/V2IwYeCRDj4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000025A1BBEC550>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:41:17,019 - Processing Who Shot Cupid? by Juice WRLD...
+2025-04-07 19:41:22,210 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:41:28,354 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:41:30,896 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:41:30,905 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB3C3B4690>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:41:30,913 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB3C3B4CD0>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:41:32,687 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 19:41:32,695 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB3C3B5450>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:41:42,709 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001EB3C3B56D0>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 19:41:54,023 - Error with Invidious instance https://invidious.moomoo.me: HTTPSConnectionPool(host='invidious.moomoo.me', port=443): Read timed out. (read timeout=10)
+2025-04-07 19:41:55,305 - Error with Invidious instance https://invidious.1d4.us: HTTPSConnectionPool(host='invidious.1d4.us', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'invidious.1d4.us'. (_ssl.c:1020)")))
+2025-04-07 19:41:58,165 - Error with Invidious instance https://invidious.woodland.cafe: HTTPSConnectionPool(host='invidious.woodland.cafe', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1020)')))
+2025-04-07 19:41:58,256 - Error with Invidious instance https://invidious.rawbit.ninja: HTTPSConnectionPool(host='invidious.rawbit.ninja', port=443): Max retries exceeded with url: /api/v1/videos/0paeqf1ErDc (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB3C3B4A50>: Failed to resolve 'invidious.rawbit.ninja' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:42:23,267 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:42:47,479 - Chrome path not found: C:\Users\PraiseTech\AppData\Local\Google\Chrome\User Data
+2025-04-07 19:42:57,444 - yt-dlp CLI error: ERROR: [youtube] 0paeqf1ErDc: Sign in to confirm you’re not a bot. This helps protect our community. Learn more
+
+2025-04-07 19:43:08,017 - All download methods failed for video: 0paeqf1ErDc
+2025-04-07 19:43:11,873 - Error with Invidious instance https://invidious.snopyta.org: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:43:20,236 - Error with Invidious instance https://invidious.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:43:23,169 - Error with Invidious instance https://invidious.slipfox.xyz: Expecting value: line 1 column 1 (char 0)
+2025-04-07 19:43:23,174 - Error with Invidious instance https://invidious.privacydev.net: HTTPSConnectionPool(host='invidious.privacydev.net', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB41849BD0>: Failed to resolve 'invidious.privacydev.net' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:43:23,180 - Error with Invidious instance https://invidious.sethforprivacy.com: HTTPSConnectionPool(host='invidious.sethforprivacy.com', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB41848550>: Failed to resolve 'invidious.sethforprivacy.com' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:43:25,740 - Error with Invidious instance https://invidious.weblibre.org: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-04-07 19:43:25,754 - Error with Invidious instance https://invidious.esmailelbob.xyz: HTTPSConnectionPool(host='invidious.esmailelbob.xyz', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB4184A350>: Failed to resolve 'invidious.esmailelbob.xyz' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:43:35,781 - Error with Invidious instance https://invidious.poast.org: HTTPSConnectionPool(host='invidious.poast.org', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001EB4184A710>, 'Connection to invidious.poast.org timed out. (connect timeout=10)'))
+2025-04-07 19:43:47,831 - Error with Invidious instance https://invidious.moomoo.me: HTTPSConnectionPool(host='invidious.moomoo.me', port=443): Read timed out. (read timeout=10)
+2025-04-07 19:43:49,579 - Error with Invidious instance https://invidious.1d4.us: HTTPSConnectionPool(host='invidious.1d4.us', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'invidious.1d4.us'. (_ssl.c:1020)")))
+2025-04-07 19:43:53,802 - Error with Invidious instance https://invidious.woodland.cafe: HTTPSConnectionPool(host='invidious.woodland.cafe', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1020)')))
+2025-04-07 19:43:53,812 - Error with Invidious instance https://invidious.rawbit.ninja: HTTPSConnectionPool(host='invidious.rawbit.ninja', port=443): Max retries exceeded with url: /api/v1/videos/gbRlugf_dSU (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EB41849810>: Failed to resolve 'invidious.rawbit.ninja' ([Errno 11001] getaddrinfo failed)"))
+2025-04-07 19:46:52,105 - aria2c not found - some download methods may be slower

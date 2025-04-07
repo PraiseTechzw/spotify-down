@@ -315,7 +315,7 @@ def download_with_ytdlp(video_url, output_path, track_name):
         
         # Advanced options to avoid bot detection
         ydl_opts = {
-            'format': 'bestaudio',
+            'format': 'bestaudio[ext=m4a]/bestaudio',  # Prefer M4A format
             'outtmpl': temp_output,
             'noplaylist': True,
             'quiet': False,
@@ -374,6 +374,10 @@ def download_with_ytdlp(video_url, output_path, track_name):
                 if not os.path.exists(downloaded_file) or os.path.getsize(downloaded_file) == 0:
                     logging.error(f"Downloaded file is invalid or empty: {downloaded_file}")
                     return False
+                
+                # Add .m4a extension if it's missing
+                if not output_path.endswith('.m4a'):
+                    output_path = f"{output_path}.m4a"
                 
                 # Move the file to the final location
                 try:
@@ -794,17 +798,11 @@ def download_songs(selected_playlist):
         screen.after(0, update_status, track_num, total_tracks)
 
         sanitized_track_name = sanitize_filename(f"{track['track']['artists'][0]['name']} - {track['track']['name']}")
-        final_file = os.path.join(download_folder, f"{sanitized_track_name}")  # Remove .mp3 extension
+        final_file = os.path.join(download_folder, f"{sanitized_track_name}.m4a")  # Add .m4a extension
 
-        # Check if any version of the file exists
-        existing_file = None
-        for file in os.listdir(download_folder):
-            if file.startswith(sanitized_track_name):
-                existing_file = os.path.join(download_folder, file)
-                break
-
-        if existing_file and os.path.getsize(existing_file) > 0:
-            print(f"Skipping, already downloaded: {existing_file}")
+        # Check if the file already exists
+        if os.path.exists(final_file) and os.path.getsize(final_file) > 0:
+            print(f"Skipping, already downloaded: {final_file}")
             continue
 
         success = False
